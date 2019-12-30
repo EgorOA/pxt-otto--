@@ -9,52 +9,7 @@ radio.onReceivedValue(function (name, value) {
         Come2()
     }
 })
-function reset22() {
-    robotbit.Servo(robotbit.Servos.S1, 90)
-    robotbit.Servo(robotbit.Servos.S2, 90)
-    robotbit.Servo(robotbit.Servos.S3, 80)
-    robotbit.Servo(robotbit.Servos.S4, 96)
-    robotbit.Servo(robotbit.Servos.S5, 110)
-    robotbit.Servo(robotbit.Servos.S6, 90)
-    robotbit.Servo(robotbit.Servos.S7, 80)
-    robotbit.Servo(robotbit.Servos.S8, 90)
-}
-function Come2() {
-    robotbit.Servo(robotbit.Servos.S5, 30)
-    basic.pause(500)
-    robotbit.Servo(robotbit.Servos.S6, 30)
-    basic.pause(500)
-    robotbit.Servo(robotbit.Servos.S6, 90)
-    basic.pause(500)
-    robotbit.Servo(robotbit.Servos.S6, 30)
-    basic.pause(500)
-    robotbit.Servo(robotbit.Servos.S6, 90)
-    basic.pause(500)
-    robotbit.Servo(robotbit.Servos.S7, 170)
-    basic.pause(500)
-    robotbit.Servo(robotbit.Servos.S8, 160)
-    basic.pause(500)
-    robotbit.Servo(robotbit.Servos.S8, 90)
-    basic.pause(500)
-    robotbit.Servo(robotbit.Servos.S8, 160)
-    basic.pause(500)
-    robotbit.Servo(robotbit.Servos.S8, 90)
-    basic.pause(500)
-    robotbit.Servo(robotbit.Servos.S6, 30)
-    robotbit.Servo(robotbit.Servos.S8, 160)
-    basic.pause(500)
-    robotbit.Servo(robotbit.Servos.S6, 90)
-    robotbit.Servo(robotbit.Servos.S8, 90)
-    basic.pause(500)
-    robotbit.Servo(robotbit.Servos.S6, 30)
-    robotbit.Servo(robotbit.Servos.S8, 160)
-    basic.pause(500)
-    robotbit.Servo(robotbit.Servos.S6, 90)
-    robotbit.Servo(robotbit.Servos.S8, 90)
-    robotbit.Servo(robotbit.Servos.S5, 110)
-    robotbit.Servo(robotbit.Servos.S7, 80)
-}
-function GoForward(val: number) {
+function GoForward (val: number) {
     if (mainloop < step) {
         if (interloop < count - 1) {
             interloop += 1
@@ -91,7 +46,52 @@ function GoForward(val: number) {
         robotbit.Servo(robotbit.Servos.S7, 120)
     }
 }
-function GoBackward(val: number) {
+function reset22 () {
+    robotbit.Servo(robotbit.Servos.S1, 90)
+    robotbit.Servo(robotbit.Servos.S2, 90)
+    robotbit.Servo(robotbit.Servos.S3, 80)
+    robotbit.Servo(robotbit.Servos.S4, 96)
+    robotbit.Servo(robotbit.Servos.S5, 110)
+    robotbit.Servo(robotbit.Servos.S6, 90)
+    robotbit.Servo(robotbit.Servos.S7, 80)
+    robotbit.Servo(robotbit.Servos.S8, 90)
+}
+function Come2 () {
+    robotbit.Servo(robotbit.Servos.S5, 30)
+    basic.pause(500)
+    robotbit.Servo(robotbit.Servos.S6, 30)
+    basic.pause(500)
+    robotbit.Servo(robotbit.Servos.S6, 90)
+    basic.pause(500)
+    robotbit.Servo(robotbit.Servos.S6, 30)
+    basic.pause(500)
+    robotbit.Servo(robotbit.Servos.S6, 90)
+    basic.pause(500)
+    robotbit.Servo(robotbit.Servos.S7, 170)
+    basic.pause(500)
+    robotbit.Servo(robotbit.Servos.S8, 160)
+    basic.pause(500)
+    robotbit.Servo(robotbit.Servos.S8, 90)
+    basic.pause(500)
+    robotbit.Servo(robotbit.Servos.S8, 160)
+    basic.pause(500)
+    robotbit.Servo(robotbit.Servos.S8, 90)
+    basic.pause(500)
+    robotbit.Servo(robotbit.Servos.S6, 30)
+    robotbit.Servo(robotbit.Servos.S8, 160)
+    basic.pause(500)
+    robotbit.Servo(robotbit.Servos.S6, 90)
+    robotbit.Servo(robotbit.Servos.S8, 90)
+    basic.pause(500)
+    robotbit.Servo(robotbit.Servos.S6, 30)
+    robotbit.Servo(robotbit.Servos.S8, 160)
+    basic.pause(500)
+    robotbit.Servo(robotbit.Servos.S6, 90)
+    robotbit.Servo(robotbit.Servos.S8, 90)
+    robotbit.Servo(robotbit.Servos.S5, 110)
+    robotbit.Servo(robotbit.Servos.S7, 80)
+}
+function GoBackward (val: number) {
     if (mainloop2 < step) {
         if (interloop2 < count - 1) {
             tmp_cnt = mainloop2 + 1
@@ -128,8 +128,20 @@ function GoBackward(val: number) {
         robotbit.Servo(robotbit.Servos.S7, 120)
     }
 }
+let Z4 = 0
+let Z3 = 0
+let Z2 = 0
+let Z1 = 0
 let interloop2 = 0
 let mainloop2 = 0
+let angle4 = 0
+let angle3 = 0
+let angle2 = 0
+let angle1 = 0
+let g20_angle = 0
+let g15_angle = 0
+let g5_angle = 0
+let g2_angle = 0
 let tmp_cnt = 0
 let interloop = 0
 let mainloop = 0
@@ -151,18 +163,6 @@ let forward_g20: number[] = []
 let forward_g15: number[] = []
 let forward_g5: number[] = []
 let forward_g2: number[] = []
-let g2_angle = 0
-let g5_angle = 0
-let g15_angle = 0
-let g20_angle = 0
-let angle1 = 0
-let angle2 = 0
-let Z1 = 0
-let angle3 = 0
-let Z2 = 0
-let angle4 = 0
-let Z3 = 0
-let Z4 = 0
 forward_g2 = [105, 98, 89, 74, 66, 75, 89, 98, 105, 180]
 forward_g5 = [90, 101, 110, 101, 90, 80, 72, 82, 90, 180]
 forward_g15 = [99, 88, 74, 60, 50, 60, 78, 87, 99, 180]
